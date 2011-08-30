@@ -56,7 +56,7 @@
             overlay.html(settings.text)
 			    .attr('id', tooltipID)
                 .css('display', 'none')
-			    .append('<a href="#" class="close">\u00D7</div>')
+			    .append('<a href="#" class="close">&#215;</div>')
                 .find('.close').bind('tap', function (e) {
                     e.preventDefault();
                     hideTooltip('#' + tooltipID);

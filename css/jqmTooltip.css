@@ -20,13 +20,13 @@
 	padding:10px;
 	text-align:left;
 	font-family:helvetica;
-	background: #eeeeee; /* Old browsers */
-	background: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 2%, #cccccc 98%, #a3a3a3 100%); /* FF3.6+ */
+	background: #eeeeee;
+	background: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 2%, #cccccc 98%, #a3a3a3 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(2%,#eeeeee), color-stop(98%,#cccccc), color-stop(100%,#a3a3a3)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #ffffff 0%,#eeeeee 2%,#cccccc 98%,#a3a3a3 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #ffffff 0%,#eeeeee 2%,#cccccc 98%,#a3a3a3 100%); /* Opera11.10+ */
-	background: -ms-linear-gradient(top, #ffffff 0%,#eeeeee 2%,#cccccc 98%,#a3a3a3 100%); /* IE10+ */
-	background: linear-gradient(top, #ffffff 0%,#eeeeee 2%,#cccccc 98%,#a3a3a3 100%); /* W3C */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#eeeeee 2%,#cccccc 98%,#a3a3a3 100%);
+	background: -o-linear-gradient(top, #ffffff 0%,#eeeeee 2%,#cccccc 98%,#a3a3a3 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%,#eeeeee 2%,#cccccc 98%,#a3a3a3 100%);
+	background: linear-gradient(top, #ffffff 0%,#eeeeee 2%,#cccccc 98%,#a3a3a3 100%);
 	border:1px solid #505050;
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
@@ -69,11 +69,11 @@
 	-webkit-transform:rotateZ(45deg);
 	transform: rotate(45deg);
 	background: #eee;
-	background: -moz-linear-gradient(0 0, rgba(204,204,204,0) 0%, rgba(204,204,204,0) 40%, #ccc 41%); /* FF3.6+ */
+	background: -moz-linear-gradient(0 0, rgba(204,204,204,0) 0%, rgba(204,204,204,0) 40%, #ccc 41%);
 	background: -webkit-gradient(linear,0 0,100% 100%,color-stop(0,rgba(204,204,204,0)),color-stop(0.4,rgba(204,204,204,0)),color-stop(0.4,#ccc)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(0 0, rgba(204,204,204,0) 0%,rgba(204,204,204,0) 40%, #ccc 40%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(0 0, rgba(204,204,204,0) 0%,rgba(204,204,204,0) 40%, #ccc 40%);  /* Opera11.10+ */
-	background: linear-gradient(0 0, rgba(204,204,204,0) 0%,rgba(204,204,204,0) 40%, #ccc 40%); /* W3C */
+	background: -webkit-linear-gradient(0 0, rgba(204,204,204,0) 0%,rgba(204,204,204,0) 40%, #ccc 40%);
+	background: -o-linear-gradient(0 0, rgba(204,204,204,0) 0%,rgba(204,204,204,0) 40%, #ccc 40%);
+	background: linear-gradient(0 0, rgba(204,204,204,0) 0%,rgba(204,204,204,0) 40%, #ccc 40%);
 	bottom:-9px; 
 }
 .jqmTooltip.under .arrow {
@@ -82,11 +82,11 @@
 	-webkit-transform:rotateZ(225deg);
 	transform: rotate(225deg);
 	background: #eee;
-	background: -moz-linear-gradient(0 0, rgba(238,238,238,0) 0%, rgba(238,238,238,0) 40%, #eee 41%); /* FF3.6+ */
+	background: -moz-linear-gradient(0 0, rgba(238,238,238,0) 0%, rgba(238,238,238,0) 40%, #eee 41%);
 	background: -webkit-gradient(linear,0 0,100% 100%,color-stop(0,rgba(238,238,238,0)),color-stop(0.4,rgba(238,238,238,0)),color-stop(0.4,#eee)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(0 0, rgba(238,238,238,0) 0%,rgba(238,238,238,0) 40%, #eee 41%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(0 0, rgba(238,238,238,0) 0%,rgba(238,238,238,0) 40%, #eee 41%);  /* Opera11.10+ */
-	background: linear-gradient(0 0, rgba(238,238,238,0) 0%,rgba(238,238,238,0) 40%, #eee 41%); /* W3C */
+	background: -webkit-linear-gradient(0 0, rgba(238,238,238,0) 0%,rgba(238,238,238,0) 40%, #eee 41%);
+	background: -o-linear-gradient(0 0, rgba(238,238,238,0) 0%,rgba(238,238,238,0) 40%, #eee 41%);
+	background: linear-gradient(0 0, rgba(238,238,238,0) 0%,rgba(238,238,238,0) 40%, #eee 41%);
 	top:-9px;
 }
 
