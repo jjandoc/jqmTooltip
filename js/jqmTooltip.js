@@ -6,8 +6,7 @@
 
     $.fn.jqmTooltip = function (options) {
 
-        var $this = $(this),
-        settings = {
+        var settings = {
             'arrow': true,
             'fadeSpeed': 200,
             'maxWidth': 280,
@@ -15,7 +14,7 @@
             'position': 'autoUnder',
             'offset': 15,
             'text': 'title'
-        }
+        }, useTitle
 
         function showTooltip(tooltip) {
             $(tooltip).fadeIn(settings.fadeSpeed);
@@ -26,9 +25,11 @@
             }
             $(tooltip).fadeOut(settings.fadeSpeed);
         }
-
+        if (settings.text == 'title') {
+        	useTitle = true;
+        }
         // Hide visible tooltips when clicking rest of screen or on resize
-        $this.parents('div:jqmData(role="page")').bind('tap.jqmTooltip', function (event) {
+        this.parents('div:jqmData(role="page")').bind('tap.jqmTooltip', function (event) {
             hideTooltip('all');
         });
         $(window).bind('resize.jqmTooltip', function (event) {
@@ -41,7 +42,8 @@
                 $.extend(settings, options);
             }
 
-            var cssStyles = {},
+            var $this = $(this),
+            	cssStyles = {},
                 tooltipID = 'tooltip-' + Math.floor(Math.random() * 1000),
                 overlay, overlayWidth, overlayLeft, overlayOffset, element, elemOffset, windowHeight, windowWidth;
 
@@ -49,7 +51,7 @@
             overlay = $('<div class="jqmTooltip">');
 
             // Grab inner text from title tag by default
-            if (settings.text == 'title') {
+            if (useTitle) {
                 settings.text = $this.attr('title');
                 $this.attr('title', '');
             }
@@ -118,10 +120,10 @@
                     // position overlay vertically based on settings
                     switch (settings.position) {
                         case ('over'):
-                            cssStyles.top = 'auto';
-                            cssStyles.bottom = (windowHeight - elemOffset.top) + settings.offset + 'px';
-                            overlay.addClass('over').css(cssStyles);
+                            overlay.css(cssStyles);
                             showTooltip(overlay);
+                            cssStyles.top = elemOffset.top - overlay.outerHeight() - settings.offset + 'px';
+                            overlay.addClass('over').removeClass('under').css(cssStyles);
                             break;
                         case ('under'):
                             cssStyles.top = elemOffset.top + element.outerHeight() + settings.offset + 'px';

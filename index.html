@@ -1,0 +1,177 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>jqmTooltip</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+	<link rel="stylesheet" href="css/jqmTooltip.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+	<script type="text/javascript" src="js/jqmTooltip.js"></script>
+	
+	<style>
+		h1 {text-align: center; font-size: 30px;}
+		nav p {text-align: center;}
+		pre { padding: 10px; overflow-x: scroll; border: 1px solid #707070; width: 95%; background: #ffffff; }
+		footer {padding: 0 15px;}
+		@media(min-width: 768px){
+			.main {width: 65%; padding-left: 2%; border-left: 1px solid #cccccc; float:right;}
+			nav {width:30%; float:left;}
+		}
+	</style>
+	<script>
+		$('div:jqmData(role="page")').live('pagecreate', function(e){		
+			$(e.target).find('.tooltip').jqmTooltip();
+			//$(e.target).find('.tooltip2').jqmTooltip({'position': 'over'});
+		});
+	</script>
+</head> 
+
+<body> 
+
+<div data-role="page" id="about">
+	<header data-role="header">
+		<h1>jqmTooltip</h1>
+	</header>
+	
+	<div data-role="content">
+			
+		<nav>
+			<h1>jqmTooltip</h1>
+			<p>Simple tooltip plugin for use with jQuery Mobile.</p>
+			<ul data-role="listview" data-inset="true">
+				<li data-theme="a"><a href="#about">About & Demo</a></li>
+				<li><a href="#options">Options</a></li>
+				<li><a href="#download">Download</a></li>
+				<li data-theme="e"><a href="https://github.com/jjandoc/jqmTooltip" rel="external">Fork on github</a></li>
+			</ul>
+		</nav>
+		
+		<div class="main">
+			<h2>About</h2>
+			<p>jqmTooltip is a jQuery Mobile plugin for adding tooltip dialog boxes optimized for use on devices with smaller screens. Tooltip boxes are designed for smart positioning so they reveal, be default, in the mobile viewport to avoid scrolling.</p>
+			<h2>Demo</h2>
+			<a class="tooltip" href="#" title="This is what it looks like! By default, content is taken from the title attribute of a link. Width and positioning (above or below) can be adjusted along with whether or not to show an arrow. Show options page for more options." data-role="button" data-theme="b" data-icon="info">What's it look like?</a>
+			<p>Clicking on this button will activate the tooltip. By default, the tooltip will show centered underneath the element that activated it. If this would cause it to extend outside of the window horizontally, it will position itself with a minimum distance from the left or right sides of the window (a distance which can be defined in the <a href="#option">options</a>). If revealing below the element will cause it to be shown outside of the window, it will instead show above the element (this can also be adjusted in the <a href="#options">options</a>). While there is a "close" button, the overlay can be closed by clicking anywhere on the screen or resizing the window.</p>
+			<a class="tooltip" href="#" title="Here's an example of a tooltip being repositioned off-center of its trigger element so as not to run off the window." data-role="button" data-icon="info" data-theme="b" data-iconpos="notext" style="float: right;">Another example</a>
+			<p>The button to the right is an example of the tooltip that will adjust horizontally so it does not show outside of the window. Notice that the arrow still adjusts position to be under its triggering element.</p>
+			<p></p>
+			<h2>Usage</h2>
+			<p>jqmTooltip requires jQuery and jQuery Mobile so you will need to include these libraries along with the jqmTooltip.css and jqmTooltip.js files. A typical &lt;head&gt; will include this:</p>
+			<pre>&lt;link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" /&gt;
+&lt;link rel="stylesheet" href="css/jqmTooltip.css" /&gt;
+&lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js">&lt;/script&gt;
+&lt;script type="text/javascript" src="js/jqmTooltip.js"&gt;&lt;/script&gt;</pre>
+			<p>Once you've got the plugin script in place, all you need to do is call the .jqmTooltip method on your jQuery object. The .jqmTooltip method takes one optional object argument for plugin options. Typically you will target an &lt;a&gt; anchor element and the jqmTooltip will use the element's <em>title</em> attribute for its content (this can be changed in the <a href="#option">options</a>).</p>
+			<p>Since jQuery Mobile leverages a lot of AJAX and DOM manipulation, my javascript implementation tends to look something like this.</p>
+			<pre>&lt;script&gt;
+    $('div:jqmData(role="page")').live('pagecreate', function(e){		
+        $(e.target).find('.tooltip').jqmTooltip();
+    });
+&lt;/script&gt;</pre>
+			<p>But if you're using a multi-page layout or not using JQM's AJAX page loads, you can get away with just using the $(document).ready event.</p>
+			<pre>&lt;script&gt;
+    $(document).ready(function(){
+        $('.tooltip').jqmTooltip();
+    });
+&lt;/script&gt;</pre>
+			<p>As for the HTML, all you need is this (feel free to use whatever class/selector you wish).</p>
+			<pre>&lt;a class="tooltip" href="#" title="This is the text jqmTooltip uses by default"&gt;What's this?&lt;/a&gt;</pre>
+		</div>
+	</div>
+	
+	<footer data-role="footer" data-theme="c">
+		<p>&copy; 2011 Jon Jandoc <a href='mailto&#58;jon&#64;yu&#112;so&#46;c&#111;%&#54;D'>j&#111;n&#64;yup&#115;o&#46;com</a></p>
+	</footer>
+</div>
+
+<div data-role="page" id="options">
+	<header data-role="header">
+		<h1>jqmTooltip</h1>
+	</header>
+	
+	<div data-role="content">
+			
+		<nav>
+			<h1>jqmTooltip</h1>
+			<p>Simple tooltip plugin for use with jQuery Mobile.</p>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#about">About & Demo</a></li>
+				<li data-theme="a"><a href="#options">Options</a></li>
+				<li><a href="#download">Download</a></li>
+				<li data-theme="e"><a href="https://github.com/jjandoc/jqmTooltip" rel="external">Fork on github</a></li>
+			</ul>
+		</nav>
+		
+		<div class="main">
+			<h2>Options</h2>
+			<p>jqmTooltip provides the following options and defaults</p>
+			<pre>$('.tooltip').jqmTooltip({
+    'arrow': true,
+    'fadeSpeed': 200,
+    'maxWidth': 280,
+    'minSideMargins': 15,
+    'position': 'autoUnder',
+    'offset': 15,
+    'text': 'title'
+})</pre>
+			<ul>
+				<li><strong>arrow:</strong> add an arrow to the tooltip. <em>Boolean. Default = true</em></li>
+				<li><strong>fadeSpeed:</strong> fade in/out animation speed in milliseconds. Use 0 for instant show/hide. <em>Integer. Default = 200</em></li>
+				<li><strong>maxWidth:</strong> maximum width in pixels of the tooltip overlay. <em>Integer. Default = 280</em></li>
+				<li><strong>minSideMargins:</strong> minimum horizontal distance in pixels the overlay will sit from the window edge. <em>Integer. Default = 15</em> </li>
+				<li><strong>position:</strong> where the overlay will appear vertically in relation to the triggering element. Options are <em>'over'</em> for always over, <em>'under'</em> for always under, <em>'autoOver'</em> for over unless it shows outside of the window, and 'autoUnder' for under unless it shows outside of the window. <em>String. Default = 'autoUnder'</em></li>
+				<li><strong>offset:</strong> vertical distance in pixels the tooltip (not including the arrow) will show above or below the triggering element. <em>Integer. Default = 15</em></li>
+				<li><strong>text:</strong> the text that will display in the tooltip. If it's the default, 'title', it will use the triggering element's title attribute. <em>String or function. Default = 'title'</em></li>
+			</ul>
+		</div>
+	</div>
+	
+	<footer data-role="footer" data-theme="c">
+		<p>&copy; 2011 Jon Jandoc <a href='mailto&#58;jon&#64;yu&#112;so&#46;c&#111;%&#54;D'>j&#111;n&#64;yup&#115;o&#46;com</a></p>
+	</footer>
+</div>
+
+<div data-role="page" id="download">
+	<header data-role="header">
+		<h1>jqmTooltip</h1>
+	</header>
+	
+	<div data-role="content">
+			
+		<nav>
+			<h1>jqmTooltip</h1>
+			<p>Simple tooltip plugin for use with jQuery Mobile.</p>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#about">About & Demo</a></li>
+				<li><a href="#options">Options</a></li>
+				<li data-theme="a"><a href="#download">Download</a></li>
+				<li data-theme="e"><a href="https://github.com/jjandoc/jqmTooltip" rel="external">Fork on github</a></li>
+			</ul>
+		</nav>
+		
+		<div class="main">
+			<h2>Download</h2>
+			<p>These files may not be completely up to date but can be considered more or less "stable". Be sure to check <a href="https://github.com/jjandoc/jqmTooltip">github</a> for the latest.</p>
+			<a href="jqmTooltip.zip" data-ajax="false" data-role="button" data-theme="b">Download</a>
+			<p>File includes:</p>
+			<ul>
+				<li>jqmTooltip.css - 3.949 KB</li>
+				<li>jqmTooltip.js - 7.069 KB (unminified development verison)</li>
+				<li>jqmTooltipo.min.js - 2.284 KB (minified production version)</li>
+			</ul>
+			<p>Better documentation to be included... eventually.</p>
+		</div>
+	</div>
+	
+	<footer data-role="footer" data-theme="c">
+		<p>&copy; 2011 Jon Jandoc <a href='mailto&#58;jon&#64;yu&#112;so&#46;c&#111;%&#54;D'>j&#111;n&#64;yup&#115;o&#46;com</a></p>
+	</footer>
+</div>
+
+</body>
+</html>
