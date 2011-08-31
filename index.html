@@ -52,13 +52,13 @@
 		
 		<div class="main">
 			<h2>About</h2>
-			<p>jqmTooltip is a jQuery Mobile plugin for adding tooltip dialog boxes optimized for use on devices with smaller screens. Tooltip boxes are designed for smart positioning so they reveal, be default, in the mobile viewport to avoid scrolling.</p>
+			<p>jqmTooltip is a jQuery Mobile plugin for adding tooltip dialog boxes optimized for use on devices with smaller screens. Tooltip boxes are designed for smart positioning so they reveal, by default, in the mobile viewport to avoid scrolling or running off the page.</p>
 			<h2>Demo</h2>
 			<a class="tooltip" href="#" title="This is what it looks like! By default, content is taken from the title attribute of a link. Width and positioning (above or below) can be adjusted along with whether or not to show an arrow. Show options page for more options." data-role="button" data-theme="b" data-icon="info">What's it look like?</a>
 			<p>Clicking on this button will activate the tooltip. By default, the tooltip will show centered underneath the element that activated it. If this would cause it to extend outside of the window horizontally, it will position itself with a minimum distance from the left or right sides of the window (a distance which can be defined in the <a href="#option">options</a>). If revealing below the element will cause it to be shown outside of the window, it will instead show above the element (this can also be adjusted in the <a href="#options">options</a>). While there is a "close" button, the overlay can be closed by clicking anywhere on the screen or resizing the window.</p>
 			<a class="tooltip" href="#" title="Here's an example of a tooltip being repositioned off-center of its trigger element so as not to run off the window." data-role="button" data-icon="info" data-theme="b" data-iconpos="notext" style="float: right;">Another example</a>
 			<p>The button to the right is an example of the tooltip that will adjust horizontally so it does not show outside of the window. Notice that the arrow still adjusts position to be under its triggering element.</p>
-			<p></p>
+			<p><em>More examples to come.</em></p>
 			<h2>Usage</h2>
 			<p>jqmTooltip requires jQuery and jQuery Mobile so you will need to include these libraries along with the jqmTooltip.css and jqmTooltip.js files. A typical &lt;head&gt; will include this:</p>
 			<pre>&lt;link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" /&gt;
@@ -66,7 +66,7 @@
 &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js">&lt;/script&gt;
 &lt;script type="text/javascript" src="js/jqmTooltip.js"&gt;&lt;/script&gt;</pre>
-			<p>Once you've got the plugin script in place, all you need to do is call the .jqmTooltip method on your jQuery object. The .jqmTooltip method takes one optional object argument for plugin options. Typically you will target an &lt;a&gt; anchor element and the jqmTooltip will use the element's <em>title</em> attribute for its content (this can be changed in the <a href="#option">options</a>).</p>
+			<p>Once you've got the plugin script in place, all you need to do is call the .jqmTooltip() method on your jQuery object. The .jqmTooltip method takes one optional object argument for plugin <a href="#options">options</a>. Typically you will target an &lt;a&gt; anchor element and the jqmTooltip will use the element's <em>title</em> attribute for its content (this can be changed in the <a href="#option">options</a>).</p>
 			<p>Since jQuery Mobile leverages a lot of AJAX and DOM manipulation, my javascript implementation tends to look something like this.</p>
 			<pre>&lt;script&gt;
     $('div:jqmData(role="page")').live('pagecreate', function(e){		
@@ -160,9 +160,9 @@
 			<a href="jqmTooltip.zip" data-ajax="false" data-role="button" data-theme="b">Download</a>
 			<p>File includes:</p>
 			<ul>
-				<li>jqmTooltip.css - 3.949 KB</li>
-				<li>jqmTooltip.js - 7.069 KB (unminified development verison)</li>
-				<li>jqmTooltipo.min.js - 2.284 KB (minified production version)</li>
+				<li>jqmTooltip.css - 3.9 KB</li>
+				<li>jqmTooltip.js - 7.2 KB (unminified development verison)</li>
+				<li>jqmTooltipo.min.js - 2.3 KB (minified production version)</li>
 			</ul>
 			<p>Better documentation to be included... eventually.</p>
 		</div>
