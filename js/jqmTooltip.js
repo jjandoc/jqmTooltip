@@ -17,13 +17,13 @@
         }, useTitle
 
         function showTooltip(tooltip) {
-            $(tooltip).fadeIn(settings.fadeSpeed);
+            $(tooltip).addClass('active').fadeIn(settings.fadeSpeed);
         }
         function hideTooltip(tooltip) {
             if (tooltip = 'all') {
                 tooltip = $('.jqmTooltip')
             }
-            $(tooltip).fadeOut(settings.fadeSpeed);
+            $(tooltip).removeClass('active').fadeOut(settings.fadeSpeed);
         }
         if (settings.text == 'title') {
         	useTitle = true;
